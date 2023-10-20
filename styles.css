@@ -373,7 +373,7 @@ footer p {
         flex-direction: column; /* Display as a column for smaller screens */
         align-items: center; /* Center items vertically */
         justify-content: center; /* Center items horizontally */
-        height: 100vh; /* Take up the entire viewport height */
+        height: 50vh; /* Take up the entire viewport height */
     }
 
     nav {
