@@ -336,8 +336,9 @@ footer p {
 }
 
 /* Style the footer legal notice */
-.sitemap-legal {
+.sitemap-legal a {
     text-align: center;
+    text-decoration: none;
     margin-top: 20px; /* Add some spacing between the sitemap and the legal notice */
     color: white; /* Text color */
 }
