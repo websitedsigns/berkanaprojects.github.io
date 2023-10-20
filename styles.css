@@ -1,0 +1,431 @@
+/* Styles for the body of the page */
+body {
+    background-color: #D9D9D9;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styles for the header */
+header {
+    background-color: #434040;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styles for the image (initially hidden) */
+.header-image {
+    display: none;
+}
+
+header h1 {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 100px;
+    letter-spacing: 12px;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+/* Styles for the navigation bar */
+nav {
+    background-color: #242424;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+}
+
+/* Styles for the burger menu (initially hidden) */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+/* Styles for the main content */
+.main-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #F0F0F0;
+    padding: 40px;
+}
+
+.content-container {
+    display: flex; /* Nested flex container */
+    flex: 1; /* Takes up remaining space */
+    align-items: center; /* Center content vertically within the parent container */
+}
+
+.content-box, .image-box {
+    flex: 1; /* Both boxes take up equal space within the content container */
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.image-box img {
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+}
+
+.content-box {
+    padding: 20px;
+    text-align: center;
+    color: #333; /* Text color */
+}
+
+.content-box h2 {
+    font-size: 28px;
+    color: #222;
+}
+
+.content-box p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.main-content-larger-letter {
+    font-size: 50px; /* Adjust the font size as needed */
+    vertical-align: sub;
+    position: relative;
+    top: 1px;
+}
+
+.larger-letter {
+    font-size: 150px; /* Adjust the font size as needed */
+    vertical-align: sub;
+    position: relative;
+    top: 10px;
+}
+
+/* Styles for various text elements */
+h2, h3 {
+    color: #fff; /* Text color */
+}
+
+ul {
+    list-style: disc;
+}
+
+button {
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555; /* Button background color on hover */
+}
+
+/* Styles for the contact section */
+.contact {
+    background-color: #F0F0F0; /* Background color */
+    padding: 40px;
+    
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 100px; /* Adjust the value as needed */
+    border: 1px solid #333; /* You can adjust the border color and thickness as needed */
+    padding: 20px; /* Add some padding inside the border for spacing */
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info li {
+    margin: 0 20px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    font-size: 50px;
+    margin-right: 10px;
+}
+
+/* Add styles for the testimonials container */
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -10px;
+}
+
+/* Style each individual testimonial box */
+.testimonial {
+    flex: 1;
+    background-color: #555;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px; /* Add margin to separate the boxes */
+    text-align: center;
+}
+
+/* Style the text in the testimonial box */
+.testimonial p {
+    font-style: italic;
+    color: #efecec;
+}
+
+.testimonial strong {
+    color: #efecec;
+}
+
+#testimonials h2 {
+    color: #333;
+}
+
+#testimonials {
+    margin-bottom: 40px; /* Adjust the value as needed */
+}
+
+/* Styles for the gallery section */
+.gallery {
+    background-color: #F0F0F0;
+    padding: 40px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.gallery-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 10px;
+    color: #333;
+}
+
+/* Styles for the footer */
+footer {
+    background-color: #242424; /* Background color */
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    color: white; /* Text color */
+}
+
+/* Adjust the width and alignment of the sitemap */
+.sitemap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto;
+}
+
+.sitemap a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Add some spacing between the sitemap sections */
+.sitemap-section {
+    margin-right: 20px; /* Adjust the spacing as needed */
+    margin-bottom: 20px;
+    flex: 1; /* Equal width for sections */
+    max-width: 300px; /* Max width for sections */
+}
+
+/* Style the sitemap sections and links */
+.sitemap-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white; /* Text color */
+}
+
+.sitemap-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitemap-section li {
+    margin: 5px 0;
+}
+
+/* Style the footer legal notice */
+.sitemap-legal {
+    text-align: center;
+    margin-top: 20px; /* Add some spacing between the sitemap and the legal notice */
+    color: white; /* Text color */
+}
+
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for the header, navigation, and other sections as needed */
+    
+    /* Example adjustments for the header */
+    header h1 {
+        font-size: 24px;
+        line-height: 60px;
+    }
+
+    /* Example adjustments for the navigation bar */
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+    }
+
+    nav li {
+        margin: 10px 0; /* Add spacing between navigation items */
+    }
+}
+
+/* Media query for smaller screens (e.g., iPhones and iPads) */
+@media only screen and (max-width: 768px) {
+    /* Expand the header and navigation bar to take the whole screen */
+    header {
+        background-color: #434040;
+        text-transform: uppercase;
+        margin: 0;
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column; /* Display as a column for smaller screens */
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Center items horizontally */
+        height: 50vh; /* Take up the entire viewport height */
+    }
+
+    nav {
+        background-color: #242424;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        padding: 10px 0;
+        text-transform: uppercase;
+    }
+
+    /* Add styles for the contact buttons */
+    .contact-buttons {
+        background-color: #434040; /* Background color for the buttons container */
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .call-button, .email-button {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 5px;
+    }
+
+    .call-button {
+        background-color: #555;
+    }
+
+    .email-button {
+        background-color: #555;
+    }
+}
+
+/* Media query to hide call and email buttons on larger screens */
+@media only screen and (min-width: 769px) {
+    .call-button, .email-button {
+        display: none; /* Hide the buttons on larger screens */
+    }
+}
+/* Media query styles to show the image */
+@media only screen and (max-width: 768px) {
+    .header-image {
+        display: block; /* Show the image in the media query */
+        width: 100%; /* Adjust the width as needed */
+        height: auto;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1; /* Place it behind other content */
+    }
+}
