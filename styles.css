@@ -266,6 +266,7 @@ button:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
     text-align: center;
+    position: relative;
 }
 
 .gallery-item:hover {
@@ -427,5 +428,20 @@ footer p {
         bottom: 0;
         left: 0;
         z-index: -1; /* Place it behind other content */
+    }
+}
+
+/* Adjust the gallery item size for small screens using a media query */
+@media only screen and (max-width: 768px) {
+    .gallery {
+        padding: 20px; /* Decrease padding for smaller screens */
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust item size */
+    }
+
+    .gallery-item {
+        padding: 5px; /* Adjust padding for smaller screens */
     }
 }
