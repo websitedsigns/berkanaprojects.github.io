@@ -1,3 +1,7 @@
+// Declare variables at the top level
+let slideIndex = 0;
+const closeButton = document.getElementById('closeButton');
+
 // Add smooth scrolling to anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -31,42 +35,6 @@ galleryItems.forEach(item => {
         modal.style.display = 'block';
     });
 });
-const closeButton = document.getElementById('closeButton');
-closeButton.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-window.addEventListener('click', event => {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-});
-
-let slideIndex = 0;
-
-// Open the modal with a specific image
-function openModal(imageIndex) {
-    slideIndex = imageIndex;
-    document.getElementById('imageModal').style.display = 'block';
-    showImage(slideIndex);
-}
-
-// Close the modal
-function closeModal() {
-    document.getElementById('imageModal').style.display = 'none';
-}
-
-// Show the current image
-function showImage(n) {
-    const images = document.querySelectorAll('.gallery-item img');
-    if (n >= images.length) slideIndex = 0;
-    if (n < 0) slideIndex = images.length - 1;
-    document.getElementById('modalImage').src = images[slideIndex].src;
-}
-
-// Navigate to the previous or next image
-function plusSlides(n) {
-    showImage(slideIndex += n);
-}let slideIndex = 0;
 
 // Open the modal with a specific image
 function openModal(imageIndex) {
@@ -100,9 +68,6 @@ const nextButton = document.querySelector('.next');
 // Add event listeners for previous and next buttons
 prevButton.addEventListener('click', () => plusSlides(-1));
 nextButton.addEventListener('click', () => plusSlides(1));
-
-// Get the close button element
-const closeButton = document.getElementById('closeButton');
 
 // Add a click event listener to the close button to hide the modal
 closeButton.addEventListener('click', closeModal);
