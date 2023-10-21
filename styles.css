@@ -337,6 +337,13 @@ button:hover {
     cursor: pointer;
 }
 
+/* Media query to hide the modal content on small screens (e.g., iPhones) */
+@media only screen and (max-width: 768px) {
+    .modal-content {
+        display: none;
+    }
+}
+
 /* Styles for the footer */
 footer {
     background-color: #242424; /* Background color */
