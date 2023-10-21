@@ -24,15 +24,29 @@ burgerMenu.addEventListener('click', () => {
     navMenu.classList.toggle('show');
 });
 
-// Gallery JavaScript (added functionality)
-const galleryItems = document.querySelectorAll('.gallery-item');
-const modal = document.getElementById('imageModal');
-const modalImage = document.getElementById('modalImage');
-galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const imageSrc = item.querySelector('img').src;
-        modalImage.src = imageSrc;
-        modal.style.display = 'block';
-    });
-});
+const carouselContainer = document.querySelector('.carousel-container');
+const carouselSlide = document.querySelector('.carousel-slide');
+const images = document.querySelectorAll('.carousel-slide img');
+
+let counter = 1;
+const slideWidth = images[0].clientWidth;
+
+function slide() {
+    if (counter >= images.length) return;
+    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+    counter++;
+    carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+}
+
+function resetSlide() {
+    if (counter <= 0) return;
+    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+    counter--;
+    carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+}
+
+carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+
+// Set an interval for automatic sliding (you can adjust the interval)
+setInterval(slide, 4000); // Change image every 4 seconds
 
