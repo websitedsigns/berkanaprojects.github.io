@@ -7,12 +7,14 @@
     <meta name="keywords" content="Berkan Projects, Chelsea, Richmond, Ealing, London, Westminster, Wimbledon, Mosaic, Victorian floors, Edwardian floors, West London, tiling, stone work, restoration">
     <meta name="author" content="websiteDSigns">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="style" href="styles.css">
+    <link rel="preload" as="font" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-solid-900.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/webfonts/fa-regular-400.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="icon" href="./images/images/favicon/favicon-32x32.png" type="image/x-icon">
     <link rel="icon" href="./images/images/favicon/favicon-16x16.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>ᛒerkana Projects</title>
 </head>
-
 <body>
     <div class="contact-buttons">
         <a href="tel:+44753 300 114" class="call-button">Call Us</a>
@@ -20,9 +22,7 @@
     </div>
     
     <header>
-        <h1><span class="larger-letter">ᛒ</span>erkana Projects </h1>
-        
-        
+        <h1><span class="larger-letter">ᛒ</span>erkana Projects</h1>
     </header>
     
     <nav class="nav-menu">
@@ -35,16 +35,24 @@
         </ul>
     </nav>
     
-        <section class="main-content">
-            <div class="content-container">
-                <div class="content-box">
-                    <h2>Welcome to <span class="main-content-larger-letter">ᛒ</span>erkana Projects</h2>
-                    <p>We specialize in restoring and maintaining the classic elegance of Victorian and Edwardian floors. With over 25 years of expertise, we serve the West London area.</p>
-                    <p>Our services encompass a wide range of tiling projects, including stone work. We take great pride in our work and can provide references from satisfied local clients.</p>
-                    <a href="#contact-info" class="cta-button">Contact Us</a>
-                </div>
+    <section class="main-content">
+        <div class="content-container">
+            <div class="content-box">
+                <h2>Welcome to <span class="main-content-larger-letter">ᛒ</span>erkana Projects</h2>
+                <p>We specialize in restoring and maintaining the classic elegance of Victorian and Edwardian floors. With over 25 years of expertise, we serve the West London area.</p>
+                <p>Our services encompass a wide range of tiling projects, including stone work. We take great pride in our work and can provide references from satisfied local clients.</p>
+                <a href="#contact-info" class="cta-button">Contact Us</a>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+        <span class="next" onclick="plusSlides(1)">&#10095;</span>
+        <img id="modalImage" class="modal-content">
+        <span id="closeButton" class="close" onclick="closeModal()">&times;</span>
+    </div>
+    
 
     <section id="gallery" class="gallery">
         <div class="image-gallery">
@@ -230,6 +238,46 @@
                 <p>&copy; Berkana Projects | <a href= "https://websitedsigns.github.io/">created by websiteDSigns</a></p>
             </div>
         </footer>
+
+        
+        
+        
+        <script>
+            // Get all gallery items
+            const galleryItems = document.querySelectorAll('.gallery-item');
+        
+            // Get the modal element
+            const modal = document.getElementById('imageModal');
+        
+            // Get the image element inside the modal
+            const modalImage = document.getElementById('modalImage');
+        
+            // Iterate through each gallery item and add a click event listener
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imageSrc = item.querySelector('img').src;
+                    modalImage.src = imageSrc; // Set the modal image source
+                    modal.style.display = 'block'; // Display the modal
+                });
+            });
+        
+            // Get the close button element
+            const closeButton = document.getElementById('closeButton');
+        
+            // Add a click event listener to the close button to hide the modal
+            closeButton.addEventListener('click', () => {
+                modal.style.display = 'none'; // Hide the modal
+            });
+        
+            // When the user clicks anywhere outside the modal, close it
+            window.addEventListener('click', event => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        </script>
         <script src="script.js"></script>
+        
+
 </body>
 </html>
