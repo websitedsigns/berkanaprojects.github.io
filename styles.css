@@ -297,11 +297,11 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.prev, .next {
+.prev {
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    width: auto;
+    top: 90%;
+    width: 100%;
     margin-top: -50px;
     padding: 16px;
     color: white;
@@ -313,8 +313,18 @@ button:hover {
 }
 
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    cursor: pointer;
+    position:absolute;
+    top: 90%;
+    width: 100%;
+    margin-top: -50px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
 .prev:hover, .next:hover {
@@ -333,16 +343,11 @@ button:hover {
     top: 15px;
     right: 15px;
     font-size: 30px;
-    color: #fff;
+    color: black;
     cursor: pointer;
 }
 
-/* Media query to hide the modal content on small screens (e.g., iPhones) */
-@media only screen and (max-width: 768px) {
-    .modal-content {
-        display: none;
-    }
-}
+
 
 /* Styles for the footer */
 footer {
