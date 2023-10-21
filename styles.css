@@ -98,9 +98,7 @@ nav a {
     padding: 20px; /* Adjust padding as needed */
 }
 
-.image-box img {
-    max-width: 100%; /* Ensure the image does not exceed the container width */
-}
+
 
 .content-box {
     padding: 20px;
@@ -247,104 +245,25 @@ button:hover {
     margin-bottom: 40px; /* Adjust the value as needed */
 }
 
-/* Styles for the gallery section */
-.gallery {
-    background-color: #F0F0F0;
-    padding: 40px;
-}
-
-.image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 20px;
-}
-
-.gallery-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.carousel-container {
+    width: 100%;
     overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
-    text-align: center;
-    position: relative;
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s;
 }
 
-.gallery-item img {
-    max-width: 100%;
+.carousel-slide img {
+    width: 100%;
     height: auto;
-    display: block;
 }
 
-.gallery-item p {
-    padding: 10px;
-    color: #333;
-}
-/* Add the new styles for the gallery modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding: 20px;
-    text-align: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.prev {
-    cursor: pointer;
-    position: absolute;
-    top: 90%;
-    width: 100%;
-    margin-top: -50px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    cursor: pointer;
-    position:absolute;
-    top: 90%;
-    width: 100%;
-    margin-top: -50px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-    max-width: 80%;
-    max-height: 80%;
-    display: block;
-    margin: 0 auto;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 30px;
-    color: black;
-    cursor: pointer;
+.carousel-item img{
+    width: 200px;
+    height: 300px;
+    padding: 0; /* Remove any padding */
 }
 
 
@@ -435,12 +354,20 @@ footer p {
         text-transform: uppercase;
         margin: 0;
         text-align: center;
-        padding: 20px;
+        padding: 30px;
         display: flex;
         flex-direction: column; /* Display as a column for smaller screens */
         align-items: center; /* Center items vertically */
         justify-content: center; /* Center items horizontally */
-        height: 50vh; /* Take up the entire viewport height */
+        height: 25vh; /* Take up the entire viewport height */
+    }
+
+    .main-content{
+        height: 100%;
+    }
+
+    .carousel-container {
+        height: 100%;
     }
 
     nav {
@@ -475,7 +402,28 @@ footer p {
     .email-button {
         background-color: #555;
     }
+
+    .carousel-container {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .carousel-slide {
+        display: flex;
+        transition: transform 0.5s;
+        flex-wrap: nowrap;
+    }
+    
+    .carousel-slide img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .carousel-item {
+        width: 50%;
 }
+
+    
 
 /* Media query to hide call and email buttons on larger screens */
 @media only screen and (min-width: 769px) {
@@ -497,17 +445,3 @@ footer p {
     }
 }
 
-/* Adjust the gallery item size for small screens using a media query */
-@media only screen and (max-width: 768px) {
-    .gallery {
-        padding: 20px; /* Decrease padding for smaller screens */
-    }
-
-    .image-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust item size */
-    }
-
-    .gallery-item {
-        padding: 5px; /* Adjust padding for smaller screens */
-    }
-}

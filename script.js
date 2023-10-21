@@ -1,6 +1,5 @@
 // Declare variables at the top level
 let slideIndex = 0;
-const closeButton = document.getElementById('closeButton');
 
 // Add smooth scrolling to anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -24,29 +23,50 @@ burgerMenu.addEventListener('click', () => {
     navMenu.classList.toggle('show');
 });
 
-const carouselContainer = document.querySelector('.carousel-container');
-const carouselSlide = document.querySelector('.carousel-slide');
-const images = document.querySelectorAll('.carousel-slide img');
+function showImage(imageIndex) {
+    slideIndex = imageIndex;
+    const modalImage = document.getElementById('modalImage');
+    const clickedImage = document.querySelectorAll('.carousel-item img')[imageIndex];
 
-let counter = 1;
-const slideWidth = images[0].clientWidth;
+    modalImage.src = clickedImage.src;
 
-function slide() {
-    if (counter >= images.length) return;
-    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-    counter++;
-    carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+    // Set the image size to make it smaller
+    modalImage.style.width = '50%'; // Adjust the size as needed
+    modalImage.style.height = 'auto';
+
+    document.getElementById('imageModal').style.display = 'block';
 }
 
-function resetSlide() {
-    if (counter <= 0) return;
-    carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-    counter--;
-    carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
 }
 
-carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+document.addEventListener('click', event => {
+    if (event.target === document.getElementById('imageModal')) {
+        closeModal();
+    }
+});
 
-// Set an interval for automatic sliding (you can adjust the interval)
-setInterval(slide, 4000); // Change image every 4 seconds
-
+$(document).ready(function() {
+    $('.carousel-container .carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: '<button class="slick-prev">Previous</button>',
+        nextArrow: '<button class="slick-next">Next</button>',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+});
