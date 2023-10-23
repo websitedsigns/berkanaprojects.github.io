@@ -231,9 +231,6 @@ button:hover {
     margin: 0; 
 }
 
-
-
-
 .carousel-item img{
     width: 200px;
     height: 200px;
@@ -241,7 +238,14 @@ button:hover {
 }
 
 
-
+.referral{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto;
+}
 
 
 /* Styles for the footer */
