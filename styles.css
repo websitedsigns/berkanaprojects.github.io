@@ -164,48 +164,82 @@ button {
 button:hover {
     background-color: #555; /* Button background color on hover */
 }
-
 /* Styles for the contact section */
 .contact {
     background-color: #F0F0F0; /* Background color */
     padding: 40px;
-    
-}
-
-.contact-info {
-    text-align: center;
-    margin-bottom: 100px; /* Adjust the value as needed */
-    border: 1px solid #333; /* You can adjust the border color and thickness as needed */
-    padding: 20px; /* Add some padding inside the border for spacing */
-}
-
-.contact-info p {
-    font-size: 18px;
-    margin: 0 0 20px;
-}
-
-.contact-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.2); /* Adds a shadow to the left side */
+
+    /* You can adjust the shadow properties (offset, blur, and color) as needed */
 }
 
-.contact-info li {
-    margin: 0 20px;
-}
 
-.contact-info a {
-    text-decoration: none;
-    color: #333;
+
+/* Styles for the contact section */
+.referral {
+    background-color: #F0F0F0; /* Background color */
+    padding: 40px;
     display: flex;
     align-items: center;
+    max-width: 33%; /* Set the width to 100% for mobile phones */
+    text-align: center; /* Center-align the text content */
 }
 
-.contact-info i {
-    font-size: 50px;
-    margin-right: 10px;
+.contact {
+    background-color: #F0F0F0; /* Background color */
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    max-width: 33%; /* Set the width to 100% for mobile phones */
+    text-align: center; /* Center-align the text content */
+}
+
+
+/* Media Query for wider screens */
+@media screen and (max-width: 768px) {
+    .contact {
+        max-width: fit-content; /* Set the width to 50% for wider screens */
+        background-color: #faf3f3; /* Background color */
+        float:left;
+        padding: 3px;
+        border:#222;
+    }
+  
+    
+    .contact-info p {
+        font-size: 10px;
+        margin: 0 0 1px;
+    }
+    
+    .contact-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .contact-info li {
+        margin: 0 20px;
+    }
+    
+    .contact-info a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .contact-info i {
+        font-size: 10px;
+        margin-right: 10px;
+    }
+
+    .referral {
+        float: right;
+        max-width: fit-content;
+    }
+
+
 }
 
 
@@ -238,14 +272,6 @@ button:hover {
 }
 
 
-.referral{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 600px; /* Adjust the width as needed */
-    margin: 0 auto;
-}
 
 
 /* Styles for the footer */
