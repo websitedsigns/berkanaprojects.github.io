@@ -304,17 +304,24 @@
     </footer>
 
     <script>
-        $(document).ready(function() {
-            $('.carousel-container .carousel').slick({
-
-                infinite: true,
-                slidesToShow: 5,
-                slidesToScroll: 5,
-                prevArrow: '<button class="slick-prev">Previous</button>',
-                nextArrow: '<button class="slick-next">Next</button>'
-            });
+    $(document).ready(function() {
+        $('.carousel-container .carousel').slick({
+            infinite: true,
+            slidesToShow: 10,
+            slidesToScroll: 5,
+            responsive: [
+                {
+                    breakpoint: 768, // Apply the following settings for screens up to 768px wide (typically mobile view)
+                    settings: {
+                        slidesToShow: 2, // Show 4 images
+                        slidesToScroll: 2, // Scroll 2 images
+                    }
+                }
+            ]
         });
-    </script>
+    });
+</script>
+
 
     <script src="script.js"></script>
   </body>

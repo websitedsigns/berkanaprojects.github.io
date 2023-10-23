@@ -253,6 +253,7 @@ button:hover {
 .carousel-slide {
     display: flex;
     transition: transform 0.5s;
+    margin: 0; 
 }
 
 .carousel-slide img {
@@ -260,11 +261,20 @@ button:hover {
     height: auto;
 }
 
-.carousel-item img{
+.carousel-item {
     width: 200px;
-    height: 300px;
-    padding: 0; /* Remove any padding */
+    height: 200px;
+    margin: 0; /* Add this line to remove any margins */
 }
+
+
+.carousel-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* This property ensures the image covers the container */
+}
+
+
 
 
 
@@ -359,16 +369,13 @@ footer p {
         flex-direction: column; /* Display as a column for smaller screens */
         align-items: center; /* Center items vertically */
         justify-content: center; /* Center items horizontally */
-        height: 25vh; 
+        height: 25vh; /* Take up the entire viewport height */
     }
 
     .main-content{
         height: 100%;
     }
 
-    .carousel-container {
-        height: 100%;
-    }
 
     nav {
         background-color: #242424;
@@ -403,27 +410,36 @@ footer p {
         background-color: #555;
     }
 
+ 
+    
+    
+   
+    
+    carousel-item img{
+        width: 200px;
+        height: 200px;
+        padding: 0; /* Remove any padding */
+    }
+    
+    .carousel-item {
+        width: 100%;
+    }
+    
     .carousel-container {
         width: 100%;
         overflow: hidden;
     }
-    
+
     .carousel-slide {
         display: flex;
         transition: transform 0.5s;
-        flex-wrap: nowrap;
     }
-    
+
     .carousel-slide img {
         width: 100%;
         height: auto;
     }
-    
-    .carousel-item {
-        width: 50%;
-}
 
-    
 
 /* Media query to hide call and email buttons on larger screens */
 @media only screen and (min-width: 769px) {
@@ -431,17 +447,7 @@ footer p {
         display: none; /* Hide the buttons on larger screens */
     }
 }
-/* Media query styles to show the image */
-@media only screen and (max-width: 768px) {
-    .header-image {
-        display: block; /* Show the image in the media query */
-        width: 100%; /* Adjust the width as needed */
-        height: auto;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: -1; /* Place it behind other content */
-    }
-}
+
+
+
 }

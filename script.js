@@ -41,19 +41,13 @@ function closeModal() {
     document.getElementById('imageModal').style.display = 'none';
 }
 
-document.addEventListener('click', event => {
-    if (event.target === document.getElementById('imageModal')) {
-        closeModal();
-    }
-});
+
 
 $(document).ready(function() {
     $('.carousel-container .carousel').slick({
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: '<button class="slick-prev">Previous</button>',
-        nextArrow: '<button class="slick-next">Next</button>',
         responsive: [
             {
                 breakpoint: 768,
